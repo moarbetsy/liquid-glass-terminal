@@ -1,0 +1,68 @@
+{
+  "name": "liquid-glass-dashboard",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "homepage": "./",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:github": "GITHUB_PAGES=true vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "electron": "electron .",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
+    "electron:build": "npm run build && electron-builder",
+    "dist": "npm run build && electron-builder --publish=never",
+    "generate-hash": "node scripts/generate-password-hash.js",
+    "setup-github-pages": "node scripts/setup-github-pages.js"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.540.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "electron": "^29.0.0",
+    "electron-builder": "^24.9.1",
+    "jsdom": "^26.1.0",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^3.2.4",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.liquidglass.terminal",
+    "productName": "Liquid Glass Terminal",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "node_modules/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.business"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

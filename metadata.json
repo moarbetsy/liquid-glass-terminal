@@ -1,0 +1,5 @@
+{
+  "name": "Liquid Glass Dashboard",
+  "description": "An Apple-style dashboard with a liquid glass aesthetic for managing orders, clients, and products. Features include light/dark modes, CRUD operations, and data persistence via localStorage.",
+  "requestFramePermissions": []
+}

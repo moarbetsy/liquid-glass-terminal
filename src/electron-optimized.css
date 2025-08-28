@@ -1,0 +1,328 @@
+/* Electron Ultra-Optimized CSS - Minimal Memory Usage */
+/* Aggressive optimizations to prevent tile memory limit errors */
+
+/* Force hardware acceleration off for memory-intensive elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* Disable GPU layers to reduce tile memory usage */
+  transform: none !important;
+  will-change: auto !important;
+  contain: none !important;
+  /* Force software rendering for complex elements */
+  -webkit-transform: none !important;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+}
+
+html, body, #root {
+  background-color: #000000 !important;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Simplified glass effects - no backdrop-filter */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Button-style search bar */
+.search-button {
+  width: 100% !important;
+  max-width: 28rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 14px 16px !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  cursor: text !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
+  margin: 0 auto !important;
+}
+
+.search-button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.search-button:focus-within {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+}
+
+.search-button input {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: white !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  flex: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.search-button input::placeholder {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+.search-button .search-icon {
+  color: white !important;
+  flex-shrink: 0 !important;
+}
+
+.search-container {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  padding: 8px 12px;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Disable all animations, transitions, and GPU acceleration */
+*, *::before, *::after {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  /* Critical: Disable all GPU acceleration */
+  transform: none !important;
+  transform-style: flat !important;
+  perspective: none !important;
+  will-change: auto !important;
+  /* Prevent layer creation */
+  -webkit-transform: none !important;
+  -webkit-transform-style: flat !important;
+  -webkit-perspective: none !important;
+  /* Force CPU rendering */
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Utility classes */
+.text-white { color: white; }
+.text-white\/40 { color: rgba(255, 255, 255, 0.4); }
+.text-white\/50 { color: rgba(255, 255, 255, 0.5); }
+.text-white\/60 { color: rgba(255, 255, 255, 0.6); }
+.text-white\/70 { color: rgba(255, 255, 255, 0.7); }
+.text-white\/80 { color: rgba(255, 255, 255, 0.8); }
+.text-white\/90 { color: rgba(255, 255, 255, 0.9); }
+
+.bg-black { background-color: #000000; }
+.bg-white\/5 { background-color: rgba(255, 255, 255, 0.05); }
+.bg-white\/8 { background-color: rgba(255, 255, 255, 0.08); }
+
+.border-white\/10 { border-color: rgba(255, 255, 255, 0.1); }
+.border-white\/15 { border-color: rgba(255, 255, 255, 0.15); }
+
+.rounded-xl { border-radius: 12px; }
+.rounded-lg { border-radius: 8px; }
+
+.p-4 { padding: 16px; }
+.p-6 { padding: 24px; }
+.p-8 { padding: 32px; }
+
+.mb-2 { margin-bottom: 8px; }
+.mb-4 { margin-bottom: 16px; }
+.mb-6 { margin-bottom: 24px; }
+.mb-8 { margin-bottom: 32px; }
+
+.flex { display: flex; }
+.grid { display: grid; }
+.hidden { display: none; }
+
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.text-center { text-align: center; }
+
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+
+.text-sm { font-size: 14px; }
+.text-xs { font-size: 12px; }
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overflow-hidden { overflow: hidden; }
+.overflow-y-auto { overflow-y: auto; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.min-h-screen { min-height: 100vh; }
+
+.max-w-4xl { max-width: 896px; }
+.max-w-6xl { max-width: 1152px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.space-y-1 > * + * { margin-top: 4px; }
+.space-y-2 > * + * { margin-top: 8px; }
+.space-y-3 > * + * { margin-top: 12px; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+
+.cursor-pointer { cursor: pointer; }
+.select-none { user-select: none; }
+
+/* Responsive grid */
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Flexbox utilities */
+.flex-1 { flex: 1 1 0%; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+/* Positioning */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+
+/* Z-index */
+.z-50 { z-index: 50; }
+
+/* Colors for specific elements */
+.text-red-400 { color: #f87171; }
+.text-green-400 { color: #4ade80; }
+.text-yellow-400 { color: #facc15; }
+.text-blue-400 { color: #60a5fa; }
+
+.bg-red-500\/10 { background-color: rgba(239, 68, 68, 0.1); }
+.border-red-500\/20 { border-color: rgba(239, 68, 68, 0.2); }
+
+/* Gradient text effect - disabled for memory optimization */
+.gradient-text {
+  color: white !important;
+  /* Disable gradient to prevent tile memory usage */
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: white !important;
+  background-clip: initial !important;
+}
+
+/* Critical: Prevent tile memory overflow */
+body, html, #root {
+  /* Force simple rendering */
+  image-rendering: pixelated !important;
+  -webkit-font-smoothing: none !important;
+  text-rendering: optimizeSpeed !important;
+  /* Disable complex visual effects */
+  filter: none !important;
+  -webkit-filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Disable all backdrop filters and complex effects */
+.backdrop-blur-xl,
+.backdrop-blur-lg,
+.backdrop-blur-md,
+.backdrop-blur-sm,
+.backdrop-blur {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Force simple backgrounds */
+.bg-gradient-to-br,
+.bg-gradient-to-r,
+.bg-gradient-to-l,
+.bg-gradient-to-t,
+.bg-gradient-to-b {
+  background: #000000 !important;
+}
+
+/* Simplify all glass effects */
+.glass-panel,
+.glass-button,
+.glass-input {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+/* Disable shadows and complex borders */
+.shadow,
+.shadow-lg,
+.shadow-xl,
+.shadow-2xl {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+/* Force simple scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #333 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666 !important;
+  border-radius: 0 !important;
+}
+
+/* Memory optimization for large lists */
+.overflow-y-auto {
+  /* Enable simple scrolling without GPU acceleration */
+  -webkit-overflow-scrolling: auto !important;
+}
