@@ -2,6 +2,8 @@
 
 A sophisticated business management application that combines an ordering terminal interface with a comprehensive dashboard for managing clients, products, and orders.
 
+*Last updated: January 2025*
+
 ## 🚀 Live Demo
 
 Visit the live application: [https://moarbetsy.github.io/liquid-glass-terminal/](https://moarbetsy.github.io/liquid-glass-terminal/)
