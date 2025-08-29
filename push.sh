@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "🚀 Pushing to GitHub..."
+echo "Replace YOUR_TOKEN with your actual GitHub token"
+echo ""
+echo "Run this command:"
+echo "git remote set-url origin https://moarbetsy:YOUR_TOKEN@github.com/moarbetsy/LiquidGlass.git"
+echo "git push -u origin main"
+echo ""
+echo "After pushing, enable GitHub Pages:"
+echo "1. Go to https://github.com/moarbetsy/LiquidGlass/settings/pages"
+echo "2. Set Source to 'GitHub Actions'"
+echo "3. Your app will be live at: https://moarbetsy.github.io/LiquidGlass/"
+echo ""
+echo "Default login: admin / admin"
