@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ command, mode }) => {
   // Use different base paths for different environments
   const base = process.env.GITHUB_PAGES === 'true' 
-    ? '/LiquidGlass/' // Repository name for moarbetsy
+    ? '/liquid-glass-terminal/' // Repository name for moarbetsy
     : './' // For Electron
 
   return {
